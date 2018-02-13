@@ -16,6 +16,11 @@ router.get("/register", function(req, res) {
 //handle sign up logic
 router.post("/register", function(req, res) {
     var newUser = new User({username: req.body.username});
+    //eval(require("locus"))
+    if(req.body.adminCode === "secretcode"){
+        newUser.isAdmin = true;
+    }
+    
     User.register(newUser, req.body.password, function(err, user){//register function provided by passport-local-mongoose store the Hash
         if(err){
             req.flash("error", err.message);//err build in passport
