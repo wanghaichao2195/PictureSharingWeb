@@ -14,6 +14,7 @@ router.get("/", function(req, res){
 router.get("/register", function(req, res) {
     res.render("register");// render register 
 });
+
 //handle sign up logic
 router.post("/register", function(req, res) {
     var newUser = new User(
@@ -45,14 +46,17 @@ router.post("/register", function(req, res) {
 
 //show login form
 router.get("/login", function(req, res) {
-    res.render("login");
+    res.render("login/login");
+});
+router.get("/login/failure_login",function(req,res){
+     res.render("login/failure_login")
 });
 
 //handling login logic
 router.post("/login", passport.authenticate("local", //middleware
     {
         successRedirect:"/campgrounds",
-        failureRedirect:"/login"
+        failureRedirect:"/login/failure_login"
     }), function(req, res) {//can also leave blank if you want
 });
 
