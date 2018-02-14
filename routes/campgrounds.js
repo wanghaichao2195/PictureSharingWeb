@@ -28,7 +28,6 @@ router.get("/", function(req, res){
                             current: pageNumber,
                             pages: Math.ceil(count / perPage),
                             search: req.query.search
-                       
                    });
                 }
             });
