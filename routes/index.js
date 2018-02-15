@@ -29,7 +29,7 @@ router.post("/register", function(req, res) {
             
         });
     //eval(require("locus"))
-    if(req.body.adminCode === "secretcode"){
+    if(req.body.adminCode === process.env.ADMIN){
         newUser.isAdmin = true;
     }
     
