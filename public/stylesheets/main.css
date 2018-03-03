@@ -6,6 +6,7 @@
 
 .thumbnail{
     padding: 1px;
+    margin: 5px; 
 }
 
 .thumbnail .caption-full{
