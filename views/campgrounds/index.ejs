@@ -1,7 +1,7 @@
 <% include ../partials/header %>
      
 
-<div class="container">
+
     <% if(currentUser && currentUser.isAdmin){ %>
         <h2>You're an admin!</h2>
     <% } %>
@@ -31,7 +31,7 @@
             <% }%>
         </div>
         <% campgrounds.forEach(function(campground){ %>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-6 col-sm-6">
                 <div class="thumbnail">
                    <img src="<%= campground.image %>">
                    <div class="caption">
@@ -89,6 +89,6 @@
         </ul>
         <% } %>
     </div>
-</div>
+
 
 <% include ../partials/footer %>
